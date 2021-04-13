@@ -27,6 +27,10 @@ class FirstViewController: UIViewController
         //to control observer just store it as variable and call suspend/resume
         self._oneArgObserver = provider.arg1Service.signal.connect(self, FirstViewController._onOneArgSignal)
         self._twoArgsObserver = provider.arg2Service.signal.connect(self, FirstViewController._onTwoArgSignal)
+        //transform signature
+        provider.arg2Service.signal.map(self,
+                                        FirstViewController._onAnotherTwoArgsSignal,
+                                        {($0, $1.x)})
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     //observers
@@ -51,6 +55,10 @@ class FirstViewController: UIViewController
         """
         print(log_txt)
         self._arg2SignalLb.text = log_txt
+    }
+    
+    private func _onAnotherTwoArgsSignal(x: Int, y: Int) {
+        print("transformed observer")
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     //ui handlers
