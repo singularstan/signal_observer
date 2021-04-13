@@ -170,4 +170,4 @@ service.signal.map(observer, Object.didReceiveSignal, {($0, $1.str)})
 ```
 Credits
 =======
-SignalObserver was built by Stan Reznichenko from [Lohika](www.lohika.com.ua) 
+SignalObserver was built by Stan Reznichenko from [Lohika](https://www.lohika.com.ua) 
