@@ -81,7 +81,7 @@ let service = ServiceImpl(...)
 observer1.connectToServiceSignals(service)
 //observer now receives two signals
 
-let another_observer = AnotherObserver()
+let another_observer = AnotherObject()
 service.arglessSignal.connect(another_observer, AnotherObjsct.didReceiveArglessSignal)
 //this observer receives one signal
 
@@ -168,4 +168,6 @@ let observer = Object()
 
 service.signal.map(observer, Object.didReceiveSignal, {($0, $1.str)})
 ```
-
+Credits
+=======
+SignalObserver was built by Stan Reznichenko from [Lohika](www.lohika.com.ua) 
